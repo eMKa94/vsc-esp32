@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Espressif-ESP32",
+        "description": "ESP32 CMake kit",
+        "compilers": {
+            "CC" : "${userHome}/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc",
+            "CXX" : "${userHome}/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++"
+        },
+        "environmentSetupScript": "${workspaceFolder}/lib/esp-idf/export.sh"
+    },
+    {
+        "name": "Espressif-ESP32s2",
+        "description": "ESP32s2 CMake kit",
+        "compilers": {
+            "CC" : "${userHome}/.espressif/tools/xtensa-esp32s2-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-gcc",
+            "CXX" : "${userHome}/.espressif/tools/xtensa-esp32s2-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-g++"
+        },
+        "environmentSetupScript": "${workspaceFolder}/lib/esp-idf/export.sh"
+    },
+    {
+        "name": "Espressif-ESP32s3",
+        "description": "ESP32s3 CMake kit",
+        "compilers": {
+            "CC" : "${userHome}/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin/xtensa-esp32s3-elf-gcc",
+            "CXX" : "${userHome}/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin/xtensa-esp32s3-elf-g++"
+        },
+        "environmentSetupScript": "${workspaceFolder}/lib/esp-idf/export.sh"
+    }
+]
