@@ -1,0 +1,51 @@
+{
+  "buildType": {
+    "default": "Debug",
+    "description": "Build Type Selection",
+    "choices": {
+      "Debug": {
+        "short": "Debug",
+        "long": "Build with no optimizations and debugging information",
+        "buildType": "Debug",
+        "settings": {
+          "CMAKE_CXX_FLAGS_DEBUG": "-ggdb -O0"
+        }
+      },
+      "Release": {
+        "short": "Release",
+        "long": "Build with optimizations and some debuging information",
+        "buildType": "Release",
+        "settings": {
+          "CMAKE_CXX_FLAGS_RELEASE": "-g -O3",
+          "CMAKE_INSTALL_PREFIX": "/opt/ASTRA"
+        }
+      }
+    }
+  },
+  "aplicationType": {
+    "default": "Production",
+    "description": "Build production code or unit tests",
+    "choices": {
+      "Production": {
+        "short": "Prod",
+        "long": "Build for production target",
+        "settings": {
+          "BUILD_FOR_TESTING": "OFF"
+        },
+        "env": {
+          "APPLICATION_TYPE": "prod"
+        }
+      },
+      "UnitTests": {
+        "short": "UnitT",
+        "long": "Build for unit tests",
+        "settings": {
+          "BUILD_FOR_TESTING": "ON"
+        },
+        "env": {
+          "APPLICATION_TYPE": "unit_tests"
+        }
+      }
+    }
+  }
+}

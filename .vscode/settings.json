@@ -1,5 +1,6 @@
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    "cmake.buildDirectory": "${workspaceFolder}/build",
-    "cmake.generator": "Ninja"
+    "cmake.buildDirectory": "${workspaceFolder}/build-${env:APPLICATION_TYPE}",
+    "cmake.generator": "Ninja",
+    // "cmake.configureSettings": {"BUILD_FOR_TESTING" : "ON"}
 }

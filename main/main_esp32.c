@@ -12,6 +12,7 @@
 #include "esp_chip_info.h"
 #include "esp_flash.h"
 #include "esp_system.h"
+#include "bomb.h"
 
 void app_main(void)
 {
@@ -36,6 +37,8 @@ void app_main(void)
         printf("Get flash size failed");
         return;
     }
+
+    detonate();
 
     printf("%" PRIu32 "MB %s flash\n", flash_size / (uint32_t)(1024 * 1024),
            (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
