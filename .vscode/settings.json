@@ -2,5 +2,8 @@
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.buildDirectory": "${workspaceFolder}/build-${env:APPLICATION_TYPE}",
     "cmake.generator": "Ninja",
+    "files.associations": {
+        "bomb.h": "c"
+    },
     // "cmake.configureSettings": {"BUILD_FOR_TESTING" : "ON"}
 }

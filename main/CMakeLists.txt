@@ -5,7 +5,7 @@ set(COMPONENT_SOURCES
 
 if(BUILD_FOR_TESTING)
 
-add_executable(${CMAKE_PROJECT_NAME} main_tests.c)
+# add_executable(${CMAKE_PROJECT_NAME} main_tests.c)
 
 else()
 idf_component_register(SRCS ${COMPONENT_SOURCES}

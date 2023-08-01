@@ -1,6 +1,14 @@
 #ifndef BOMB_H
 #define BOMB_H
 
-void detonate(void);
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
+    void detonate(void);
+
+#ifdef __cplusplus
+}
+#endif
 #endif /* BOMB */
