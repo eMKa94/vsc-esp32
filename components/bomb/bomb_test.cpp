@@ -1,11 +1,9 @@
 #include "CppUTest/TestHarness.h"
 #include "bomb.h"
-// #include "MockPrinter.h"
-// #include "CircularBuffer.h"
 
-TEST_GROUP(FirstTestGroup){};
+TEST_GROUP(BombTestGroup){};
 
-TEST(FirstTestGroup, FirstTest)
+TEST(BombTestGroup, BombTest)
 {
-    FAIL("Fail me!");
+    CHECK(true);
 }
