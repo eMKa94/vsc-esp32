@@ -8,9 +8,19 @@
 // clang-format off
 TEST_GROUP(LedControllerTestGroup)
 {
+
+    Interface::EGpioLevelComparator gpioLevelComparator;
+
+    void setup()
+    {
+        mock().installComparator("Interface::EGpioLevel", gpioLevelComparator);
+    }
+
     void teardown()
     {
+        mock().checkExpectations();
         mock().clear();
+        mock().removeAllComparatorsAndCopiers();
     }
 };
 // clang-format on
@@ -25,13 +35,13 @@ TEST(LedControllerTestGroup, dummyTestWithMock)
 {
     Interface::GpioOutputMock gpioOutputMock;
 
-    Interface::EGpioLevel EXPECTED_GPIO_LEVEL = Interface::EGpioLevel::HIGH;
+    // Interface::EGpioLevel EXPECTED_GPIO_LEVEL = Interface::EGpioLevel::HIGH;
 
-    mock().expectOneCall("setLevel");
-    mock().expectOneCall("getLevel").andReturnValue(&EXPECTED_GPIO_LEVEL);
-    gpioOutputMock.setLevel(Interface::EGpioLevel::HIGH);
-    Interface::EGpioLevel actualLevel = gpioOutputMock.getLevel();
+    mock()
+        .expectOneCall("setLevel")
+        .withParameterOfType("Interface::EGpioLevel", "newLevel", (void*)Interface::EGpioLevel::HIGH);
 
-    mock().checkExpectations();
-    // CHECK_EQUAL(EXPECTED_GPIO_LEVEL, actualLevel);
+    LedController ledController(gpioOutputMock);
+
+    ledController.enable();
 }
