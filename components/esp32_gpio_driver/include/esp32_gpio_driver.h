@@ -1,0 +1,5 @@
+#ifndef ESP32_GPIO_DRIVER_H
+#define ESP32_GPIO_DRIVER_H
+
+
+#endif /* ESP32_GPIO_DRIVER */

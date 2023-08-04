@@ -20,6 +20,7 @@ build_unit_tests()
 
 build_production_code()
 {
+    source ./lib/esp-idf/export.sh
     cmake -B $PROD_BUILD_DIR -G Ninja . -DUNIT_TEST_BUILD="OFF" -DMASTER_CMAKE_PROJECT_NAME:STRING="$MASTER_CMAKE_PROJECT_NAME"
     cmake --build $PROD_BUILD_DIR
 
