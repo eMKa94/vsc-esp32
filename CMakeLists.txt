@@ -32,8 +32,7 @@ if (UNIT_TEST_BUILD)
         add_dependencies(${CMAKE_PROJECT_NAME} ${COMPONENT})
         
         target_include_directories(${COMPONENT} PRIVATE ${GLOBAL_UT_FRAMEWORK_INTERFACE})
-        # add_dependencies(${COMPONENT} CppUTest CppUTestExt)
-
+    
     endforeach()
 
 
