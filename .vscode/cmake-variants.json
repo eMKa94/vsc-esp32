@@ -30,7 +30,7 @@
         "short": "Prod",
         "long": "Build for production target",
         "settings": {
-          "BUILD_FOR_TESTING": "OFF"
+          "UNIT_TEST_BUILD": "OFF"
         },
         "env": {
           "APPLICATION_TYPE": "prod"
@@ -40,7 +40,7 @@
         "short": "UnitT",
         "long": "Build for unit tests",
         "settings": {
-          "BUILD_FOR_TESTING": "ON"
+          "UNIT_TEST_BUILD": "ON"
         },
         "env": {
           "APPLICATION_TYPE": "unit_tests"

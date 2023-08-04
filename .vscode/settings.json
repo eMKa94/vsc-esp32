@@ -9,6 +9,5 @@
     },
     "cSpell.words": [
         "GPIO"
-    ],
-    // "cmake.configureSettings": {"BUILD_FOR_TESTING" : "ON"}
+    ]
 }

@@ -4,5 +4,5 @@
 
 void ComponentClass::print_from_component()
 {
-    printf("Hello from component");
+    printf("Hello from component\n");
 }
