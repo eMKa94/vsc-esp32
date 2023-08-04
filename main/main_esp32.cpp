@@ -18,11 +18,14 @@ extern "C" void app_main(void)
            " |  __/ |  __/   <| |_| | | (_) | | | | |   < (_| |\n"
            "  \\___|_|\\___|_|\\_\\\\__|_|  \\___/|_| |_|_|_|\\_\\__,_|\n"
            "                                                   \n");
-    ComponentClass componentClassInstance;
-    componentClassInstance.print_from_component();
+
+    printf("@: maciej.qb@gmail.com\n");
 
     for (;;)
     {
+
+        printf("loop...\n");
+
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }

@@ -1,15 +1,20 @@
 cmake_minimum_required(VERSION 3.16)
 
-option(MASTER_CMAKE_PROJECT_NAME "Project name given by caller" "")
 option(UNIT_TEST_BUILD "Unit Tests build variant" OFF)
-if (${MASTER_CMAKE_PROJECT_NAME} STREQUAL "")
-set(MASTER_CMAKE_PROJECT_NAME "ESP32_Template")
+
+set(MASTER_CMAKE_PROJECT_NAME "" CACHE STRING "Master CMAKE project name")
+
+if("${MASTER_CMAKE_PROJECT_NAME}" STREQUAL "")
+
+set(MASTER_CMAKE_PROJECT_NAME "VSC_ESP32_TEMPLATE")
+
 endif()
 
+message(STATUS "MASTER_CMAKE_PROJECT_NAME = ${MASTER_CMAKE_PROJECT_NAME}")
 if (UNIT_TEST_BUILD)
 
     include(utils.cmake)
-    project(${MASTER_CMAKE_PROJECT_NAME})
+    project(${MASTER_CMAKE_PROJECT_NAME}_ut)
     message(STATUS "Build :: Unit Tests")
 
     add_subdirectory(lib/cpputest)
@@ -40,7 +45,7 @@ else()
 
     message(STATUS "Build :: ESP32")
     include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-    project(minimal_esp32_cpp_project)
+    project(${MASTER_CMAKE_PROJECT_NAME})
 
 endif()
 

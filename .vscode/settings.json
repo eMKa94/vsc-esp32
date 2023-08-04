@@ -2,8 +2,8 @@
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.buildDirectory": "${workspaceFolder}/build-${env:APPLICATION_TYPE}",
     "cmake.generator": "Ninja",
-    "cpputestTestAdapter.testExecutable": "${workspaceFolder}/build-unit_tests/VSC_ESP32_Template*",
-    "cpputestTestAdapter.testExecutablePath": "${workspaceFolder}/build-unit_tests/",
+    "cpputestTestAdapter.testExecutable": "${workspaceFolder}/build-unit_tests/main/VSC_ESP32_TEMPLATE_ut*",
+    "cpputestTestAdapter.testExecutablePath": "${workspaceFolder}/build-unit_tests/main/",
     "files.associations": {
         "bomb.h": "c"
     },
