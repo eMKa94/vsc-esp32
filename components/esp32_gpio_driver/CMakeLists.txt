@@ -8,9 +8,13 @@ if (UNIT_TEST_BUILD)
     esp32_gpio_driver_tests.cpp
     )
     target_include_directories(${COMPONENT_NAME} PUBLIC include)
-
+    target_include_directories(${COMPONENT_NAME} PRIVATE
+        ${GLOBAL_ESP_IDF_MOCKS_INTERFACE}
+        ${ESP_IDF_INCLUDE_PATHS}
+    )
 
 else()
     idf_component_register(SRCS "esp32_gpio_driver.cpp"
-    INCLUDE_DIRS "include")
+    INCLUDE_DIRS "include" ${GLOBAL_COMMON_INTERFACES}
+    REQUIRES driver)
 endif()

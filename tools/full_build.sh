@@ -29,7 +29,7 @@ build_production_code()
 main()
 {
     build_unit_tests
-    ./$UNIT_TESTS_BUILD_DIR/main/$MASTER_CMAKE_PROJECT_NAME'_ut'
+    ./$UNIT_TESTS_BUILD_DIR/main/$MASTER_CMAKE_PROJECT_NAME'_ut' -v
     build_production_code
 }  
 
