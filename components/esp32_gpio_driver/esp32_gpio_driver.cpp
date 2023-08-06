@@ -27,7 +27,8 @@ void Esp32GpioOutput::setLevel(EGpioLevel newLevel)
 
 EGpioLevel Esp32GpioOutput::getLevel()
 {
-    return EGpioLevel::HIGH;
+
+    return gpio_get_level(mEsp32GpioNumber) ? EGpioLevel::HIGH : EGpioLevel::LOW;
 }
 
 } // namespace Interface
