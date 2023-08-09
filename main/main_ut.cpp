@@ -14,3 +14,4 @@ int main(int ac, char** av)
 
 IMPORT_TEST_GROUP(example_component_tests);
 IMPORT_TEST_GROUP(esp32_gpio_driver_tests);
+IMPORT_TEST_GROUP(platform_tests);

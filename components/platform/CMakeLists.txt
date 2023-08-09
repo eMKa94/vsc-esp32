@@ -4,14 +4,17 @@ if (UNIT_TEST_BUILD)
     message(STATUS "Creating [ ${COMPONENT_NAME} ] unit tests static library")
 
     add_library(${COMPONENT_NAME}
-        example_component.cpp
-        example_component_tests.cpp
+        platform.cpp
+        platform_tests.cpp
     )
+    
     target_include_directories(${COMPONENT_NAME} PUBLIC .)
+    target_link_libraries(${COMPONENT_NAME} PUBLIC esp32_gpio_driver)
     target_link_libraries(${COMPONENT_NAME} PRIVATE CppUTest)
 
-
 else()
-    idf_component_register(SRCS "example_component.cpp"
-    INCLUDE_DIRS ".")
+    idf_component_register(SRCS "platform.cpp"
+    INCLUDE_DIRS "."
+    REQUIRES esp32_gpio_driver
+    )
 endif()

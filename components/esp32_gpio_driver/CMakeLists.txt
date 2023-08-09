@@ -7,10 +7,15 @@ if (UNIT_TEST_BUILD)
     esp32_gpio_driver.cpp
     esp32_gpio_driver_tests.cpp
     )
-    target_include_directories(${COMPONENT_NAME} PUBLIC include)
-    target_include_directories(${COMPONENT_NAME} PRIVATE
-        ${GLOBAL_ESP_IDF_MOCKS_INTERFACE}
+    target_include_directories(${COMPONENT_NAME} PUBLIC
+        include
         ${ESP_IDF_INCLUDE_PATHS}
+        ${GLOBAL_ESP_IDF_MOCKS_INTERFACE}
+    )
+
+    target_link_libraries(${COMPONENT_NAME} PUBLIC
+        CppUTest
+        ecil_interface_mocks
     )
 
 else()
